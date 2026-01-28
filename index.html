@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSGN – SANOU SERVICES Gardiennage & Nettoyage</title>
+
+    <style>
+        :root {
+            --bleu: #0b2c5d;
+            --jaune: #f1b500;
+            --gris: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: var(--gris);
+            color: #333;
+        }
+
+        /* ================= HEADER ================= */
+        header {
+            background: linear-gradient(rgba(11,44,93,0.85), rgba(11,44,93,0.85)),
+                        url('https://images.unsplash.com/photo-1590496793929-36417d3117fb');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 30px 20px 60px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .logo .s {
+            background: white;
+            color: var(--bleu);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .logo .rest {
+            color: var(--jaune);
+        }
+
+        .menu-container {
+            position: relative;
+        }
+
+        .menu-btn {
+            background: white;
+            color: var(--bleu);
+            border: none;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 55px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            min-width: 180px;
+            z-index: 1000;
+        }
+
+        .menu-dropdown a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: var(--bleu);
+            font-weight: bold;
+        }
+
+        .menu-dropdown a:hover {
+            background: var(--jaune);
+            color: white;
+        }
+
+        .hero {
+            max-width: 750px;
+            margin-top: 40px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: var(--jaune);
+            font-weight: bold;
+        }
+
+        /* ================= SECTIONS ================= */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--bleu);
+            font-size: 32px;
+        }
+
+        /* ================= A PROPOS ================= */
+        .apropos-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .apropos-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .apropos-card h3 {
+            color: var(--bleu);
+            margin-bottom: 15px;
+        }
+
+        .apropos-card p {
+            line-height: 1.7;
+        }
+
+        /* ================= TEXTE - IMAGE SERVICES ================= */
+        .service-row {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-row img {
+            width: 45%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .service-text {
+            width: 55%;
+        }
+
+        .service-text h3 {
+            color: var(--bleu);
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .service-text p {
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* ================= RECRUTEMENT & CONTACT ================= */
+        .recrutement, .contact {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact {
+            background: var(--bleu);
+            color: white;
+        }
+
+        footer {
+            background: #111;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            .service-row,
+            .reverse {
+                flex-direction: column;
+            }
+
+            .service-row img,
+            .service-text {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="top-bar">
+        <div class="logo">
+            <span class="s">S</span><span class="rest">.S.G.N</span>
+        </div>
+
+        <div class="menu-container">
+            <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+            <div class="menu-dropdown" id="menu">
+                <a href="#apropos">À propos</a>
+                <a href="#services">Services</a>
+                <a href="#recrutement">Recrutement</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>SANOU SERVICES GARDIENNAGE & NETTOYAGE</h1>
+        <p>Votre partenaire de confiance en <span class="highlight">sécurité</span> et <span class="highlight">propreté</span>.</p>
+    </div>
+</header>
+
+<section id="apropos">
+    <h2>À propos de SSGN</h2>
+    <div class="apropos-content">
+        <div class="apropos-card">
+            <h3>Notre Mission</h3>
+            <p>
+                SANOU SERVICES (SSGN) accompagne entreprises et particuliers
+                dans la sécurité, la propreté et la prévention des risques
+                avec professionnalisme et rigueur.
+            </p>
+        </div>
+
+        <div class="apropos-card">
+            <h3>Notre Engagement</h3>
+            <p>
+                Nous mettons à disposition des agents formés, disciplinés
+                et responsables afin d’assurer la protection des personnes,
+                des biens et des locaux.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Nos Services</h2>
+
+    <div class="service-row">
+        <img src="https://cdn.create.vista.com/api/media/small/367840608/stock-photo-group-security-data-center-operators-administrators-working-group-cctv-monitoring" alt="Sécurité">
+        <div class="service-text">
+            <h3>Gardiennage & Sécurité</h3>
+            <p>
+                Protection des personnes et des biens grâce à des agents qualifiés,
+                spécialisés dans la surveillance, le contrôle d’accès et la prévention
+                des risques.
+            </p>
+        </div>
+    </div>
+
+    <div class="service-row reverse">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Nettoyage">
+        <div class="service-text">
+            <h3>Nettoyage Professionnel</h3>
+            <p>
+                Services de nettoyage pour bureaux, maisons et espaces professionnels,
+                garantissant hygiène, propreté et confort.
+            </p>
+        </div>
+    </div>
+
+    <div class="service-row">
+        <img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6" alt="Sécurité incendiaire">
+        <div class="service-text">
+            <h3>Sécurité Incendiaire</h3>
+            <p>
+                Prévention des risques d’incendie, surveillance et intervention rapide
+                conformément aux normes de sécurité incendiaire.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="recrutement">
+    <div class="recrutement">
+                <h1>Recrutement</h1>
+        
+        <ul>
+            <li>Agents de sécurité</li>
+            <li>Agents de sécurité incendiaire</li>
+            <li>Femmes de ménage</li>
+        </ul>
+        <p><strong>Mode :</strong> Dépôt physique des dossiers au siège.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="contact">
+              <h1>Contact</h1>
+        
+        <p>📞 33 854 40 33</p>
+        <p>📧 sanouservices@yahoo.com</p>
+        <p>📍 Thiaroye Azur – Cité SOCABEC</p>
+        <p>🕘 Lun–Ven | 08h – 16h30</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 KHADIM DIAW – SANOU SERVICES (SSGN)
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
