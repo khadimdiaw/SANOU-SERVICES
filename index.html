@@ -197,6 +197,77 @@
             color: white;
         }
 
+        section {
+  animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+        .recrutement-card {
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.recrutement-card:hover {
+  transform: translateY(-5px);
+}
+
+.recrutement-card h2 {
+  text-align: center;
+  color: var(--bleu);
+  margin-bottom: 20px;
+}
+
+.recrutement-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recrutement-card li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.recrutement-card .mode {
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--gris);
+  border-left: 5px solid var(--jaune);
+  border-radius: 8px;
+}
+      .contact-card {
+  max-width: 550px;
+  margin: auto;
+  padding: 35px;
+  background: linear-gradient(135deg, #0b2c5d, #123b7a);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.contact-card h2 {
+  margin-bottom: 25px;
+  color: var(--jaune);
+}
+
+.contact-card p {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
         footer {
             background: #111;
             color: #ccc;
@@ -306,25 +377,30 @@
 </section>
 
 <section id="recrutement">
-    <div class="recrutement">
-                <h2>Recrutement</h2>
-        <ul>
-            <li>Agents de sécurité</li>
-            <li>Femmes de ménage</li>
-        </ul>
-        <p><h3>Mode :</h3> Dépôt physique des dossiers au siège.</p>
-    </div>
+  <div class="card recrutement-card">
+    <h2>Recrutement</h2>
+
+    <ul>
+      <li>👮 Agents de sécurité</li>
+      <li>🧹 Femmes de ménage</li>
+    </ul>
+
+    <p class="mode">
+      <strong>Mode :</strong> Dépôt physique des dossiers au siège.
+    </p>
+  </div>
 </section>
 
 <section id="contact">
-    <div class="contact">
-              <h1>Contact</h1>
-        <p>📞 33 854 40 33</p>
-        <p>📞 +221 77 879 75 72</p>
-        <p>📧 sanouservices@yahoo.com</p>
-        <p>📍 Thiaroye Azur – Cité SOCABEC</p>
-        <p>🕘 Lun–Ven | 08h – 16h30</p>
-    </div>
+  <div class="contact-card">
+    <h2>Contact</h2>
+
+    <p>📞 33 854 40 33</p>
+    <p>📱 +221 77 879 75 72</p>
+    <p>📧 sanouservices@yahoo.com</p>
+    <p>📍 Thiaroye Azur – Cité SOCABEC</p>
+    <p>🕘 Lun–Ven | 08h – 16h30</p>
+  </div>
 </section>
 
 <footer>
