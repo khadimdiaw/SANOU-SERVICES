@@ -286,6 +286,45 @@
             .service-text {
                 width: 100%;
             }
+            
+            /* ================= VIDEO SECTION ================= */
+.video-section {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 900px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.video-section h3 {
+  color: var(--bleu);
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+.video-section p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.video-section video {
+  width: 100%;
+  max-height: 450px;
+  border-radius: 12px;
+}
+
+      .fullscreen-btn {
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: var(--bleu);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
         }
     </style>
 </head>
@@ -340,6 +379,19 @@
 
 <section id="services">
     <h2>Nos Services</h2>
+    
+    <source src="./videos/tenues-ssgn.mp4" type="video/mp4">
+    
+    <!-- ===== VIDEO TENUES SSGN ===== -->
+<div class="video-section">
+  <h3>Nos tenues professionnelles</h3>
+  <p>Découvrez nos tenues officielles de vigiles et femmes de ménage.</p>
+
+  <video controls autoplay muted loop>
+    <source src="videos/tenues-ssgn.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+</div>
 
     <div class="service-row">
         <img src="https://cdn.create.vista.com/api/media/small/367840608/stock-photo-group-security-data-center-operators-administrators-working-group-cctv-monitoring" alt="Sécurité">
@@ -356,7 +408,7 @@
     <div class="service-row reverse">
         <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Nettoyage">
         <div class="service-text">
-            <h3>NETOYAGE PROFETIONNEL</h3>
+            <h3>NETOYAGE PROFESSIONNEL</h3>
             <p>
                 Services de nettoyage pour bureaux, maisons et espaces professionnels,
                 garantissant hygiène, propreté et confort.
@@ -415,4 +467,4 @@ function toggleMenu() {
 </script>
 
 </body>
-</html>
+</html
